@@ -1,4 +1,4 @@
----
+con---
 layout: post
 title:  "Docker containers deeper dive"
 date:   2017-01-26
@@ -13,7 +13,7 @@ Let's play with Docker containers !
 In this first lab, you’ll put into practice the base commands to manage Docker containers.
 That means you will start to play and to have fun with containers :)
 
-Important note: in the labs, when you see command inside some grey rectangle, you just need to click on it so it is executed on the terminal (but if you want you can write it manually).
+Important note: in the labs, when you see a command inside some grey rectangle, you just need to click on it so it is executed in the terminal (but if you want you can also write it manually into the terminal).
 Let's see the first example below to get the version of the Docker Engine running on the platform.
 
 ```.term1

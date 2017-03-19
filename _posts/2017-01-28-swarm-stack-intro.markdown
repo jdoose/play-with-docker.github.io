@@ -121,7 +121,7 @@ Finally, we can check that our [APP](#){:data-term=".term1"}{:data-port="5000"} 
 
 ## Conclusion
 
-Using only a couple of commands enables to deploy a stack of services on a Docker Swarw using the really great Docker Compose file format.
+Using only a couple of commands enables to deploy a stack of services on a Docker Swarm using the really great Docker Compose file format.
 
 {:.quiz}
 What is a stack?
