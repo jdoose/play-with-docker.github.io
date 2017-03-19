@@ -26,7 +26,7 @@ You will complete the following steps as part of this lab.
 
 In this step you'll learn the basics of capabilities.
 
-The Linux kernel is able to break down the privileges of the `root` user into distinct units referred to as **capabilities**. For example, the CAP_CHOWN capability is what allows the root use to make arbitrary changes to file UIDs and GIDs. The CAP_DAC_OVERRIDE capability allows the root user to bypass kernel permission checks on file read, write and execute operations. Almost all of the special powers associated with the Linux root user are broken down into individual capabilities.
+The Linux kernel is able to break down the privileges of the `root` user into distinct units referred to as **capabilities**. For example, the CAP_CHOWN capability is what allows the root user to make arbitrary changes to file UIDs and GIDs. The CAP_DAC_OVERRIDE capability allows the root user to bypass kernel permission checks on file read, write and execute operations. Almost all of the special powers associated with the Linux root user are broken down into individual capabilities.
 
 This breaking down of root privileges into granular capabilities allows you to:
 
