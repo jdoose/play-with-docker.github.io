@@ -46,6 +46,8 @@ The above command should output 2 nodes, the first one being the manager, and th
 
 Let's retrieve the voting app code from Github and go into the application folder.
 
+Ensure you are in the first terminal and do the below:
+
 ```.term1
 git clone https://github.com/docker/example-voting-app
 cd example-voting-app
@@ -55,6 +57,8 @@ cd example-voting-app
 
 A stack is a group of service that are deployed together.
 The docker-stack.yml in the current folder will be used to deploy the voting app as a stack.
+
+Ensure you are in the first terminal and do the below:
 
 ```.term1
 docker stack deploy --compose-file=docker-stack.yml voting_stack
