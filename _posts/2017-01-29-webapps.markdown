@@ -445,18 +445,22 @@ If you were running locally on Docker for Mac or Windows, you would head over to
 
 Hit the Refresh button in the web browser to see a few more cat images.
 
-OK, now that you are done with this container, stop and remove it since you won't be using it again.
-
-Open another terminal window and execute the following commands:
+OK, now that you are done with this container, stop and remove it since you won't be using it again. If you are working in the terminal to the right, select the terminal and press `Control-C`. The run 
 
 ```.term1
+docker container rm myfirstapp
+```
+
+If you are running on your local machine, you do that. Or you can open another terminal window and execute the following commands:
+
+```
 docker container stop myfirstapp
 docker container rm myfirstapp
 ```
 
 or
 
-```.term1
+```
 docker container rm -f myfirstapp
 ```
 
