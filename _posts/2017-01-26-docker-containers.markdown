@@ -145,6 +145,11 @@ The output should be pretty much like the following one. As we can see, the proc
     51 ?        R+     0:00 ps ax
 ```
 
+You can now exit the **mongodb** container:
+```.term1
+exit
+```
+
 ## Inspection of a container
 
 A container is a quite complex thing under the hood, the container API provides the **inspect** command to get all its details.
@@ -169,10 +174,20 @@ The **Hostname** key is under the **Config** one, and can be retrieved with the 
 docker container inspect --format "{{ "{{ .Config.Hostname " }}}}" www
 ```
 
+You should see the below sha (not the exact value but something similar):
+```
+ec7cee99c78d
+```
+
 The **IPAdress** key is under the **NetworkSettings** and can be retrieved with
 
 ```.term1
 docker container inspect --format "{{ "{{ .NetworkSettings.IPAddress " }}}}" www
+```
+
+You should see the below IP address (value may vary):
+```
+172.17.0.3
 ```
 
 Select some other elements of the whole json structure returned by the **inspect** command and try to get them using the Go template format.
@@ -185,11 +200,11 @@ All the commands linked to the container can be listed with
 docker container --help
 ```
 
-We have already seen some of them and will see some other ones in the following but feel free to test them by yourself and to experiment funny container stuff.
+We have already seen some of them and will see some other ones in the following but feel free to test them by yourself and to experiment with some fun container commands and features.
 
 ## Understand the container layer
 
-The container layer is the layer created when a container is ran. This is the layer in which changes done in the container are stored.
+The container layer is the layer created when a container is run. This is the layer in which the changes applied are stored.
 This layer is deleted when the container is removed and thus cannot be used for persistent storage.
 
 We will start by running a container in interactive mode based on the **ubuntu** image.
@@ -200,7 +215,7 @@ docker container run -ti ubuntu
 
 Note: you can notice here that we do not have any error message as this was the case when we ran our first alpine container. The reason for this is because ubuntu does have a default command **bash** that is specified. The **bash** command with the **-ti** option enables us to get into an interactive shell within this container.
 
-**figlet** is a package that get a text as input and that output the same text in a funny format. By default this package is not installed in the ubuntu image, let's check that.
+**figlet** is a package that takes a text as input and displays the same text in an Ascii-art format. By default this package is not installed in the ubuntu image, but let's check that.
 
 ```.term1
 figlet
@@ -228,10 +243,10 @@ figlet Holla
 You should get a nicely formated output
 
 ```
- _           _ _
-| |__   ___ | | | __ _
-| '_ \ / _ \| | |/ _` |
-| | | | (_) | | | (_| |
+ _   _       _ _
+| | | | ___ | | | __ _
+| |_| |/ _ \| | |/ _` |
+|  _  | (_) | | | (_| |
 |_| |_|\___/|_|_|\__,_|
 ```
 
@@ -325,7 +340,7 @@ docker container ls -aq
 This is really handy when we need to remove several containers at the same time as we can feed the **rm** command with this list of ids.
 
 ```.term1
-docker container rm $(docker container ls -aq)
+docker container rm -f $(docker container ls -aq)
 ```
 
 There should not be any more container on the host.

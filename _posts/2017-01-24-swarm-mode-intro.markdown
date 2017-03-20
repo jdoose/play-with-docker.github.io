@@ -23,6 +23,8 @@ Copy the join command (*watch out for newlines*) output and paste it in the othe
 
 ## Show members of swarm
 
+Type the below command in the first terminal:
+
 ```.term1
 docker node ls
 ```
@@ -45,7 +47,7 @@ docker node ls
 ## Creating services
 
 
-The next step is to create a service and list out the services. This creates a single service called `web` that runs the latest nginx:
+The next step is to create a service and list out the services. This creates a single service called `web` that runs the latest nginx, type the below commands in the first terminal:
 
 ```.term1
 docker service create -p 80:80 --name web nginx:latest
@@ -60,7 +62,7 @@ curl http://localhost:80
 
 ## Scaling up
 
-Next let's inspect the service
+We will be performing these actions in the first terminal. Next let's inspect the service:
 
 ```.term1
 docker service inspect web

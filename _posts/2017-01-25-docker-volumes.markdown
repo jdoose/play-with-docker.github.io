@@ -69,13 +69,18 @@ You should then get an output like the following (the ID will not be the same th
 
 From our host, if we inspect the folder which path is specified in **UpperDir**, we can see our /data and the hello.txt file we created are there. 
 
+Try the below command, to see the contents of the /data folder:
+```
+ls /graph/overlay2/[YOUR_ID]/diff/data
+```
+
 What happen if we remove our c1 container now ? Let's try.
 
 ```.term1
 docker container rm c1
 ```
 
-It seems the folder defined in the **UpperDir** above does not exist anymore. Do you confirm that ?
+It seems the folder defined in the **UpperDir** above does not exist anymore. Do you confirm that ? Try running the `ls` command again and see the results.
 
 This shows that data created in a container is not persisted. It's removed with the container's layer when the container is deleted.
 
@@ -167,7 +172,7 @@ docker container stop c2 && docker container rm c2
 
 Check that the folder defined under the **Source** key is still there and contains **hello.txt** file.
 
-From all of that, we can see that a volume bypass the union filesystem and is not dependent of a container's lifecycle.
+From the above, we can see that a volume bypasses the union filesystem and is not dependent on a container's lifecycle.
 
 ## Defining a volume at runtime
 
@@ -253,6 +258,7 @@ The output should be something like
 
 ```
 DRIVER              VOLUME NAME
+[other previously created volumes]
 local               html
 ```
 
